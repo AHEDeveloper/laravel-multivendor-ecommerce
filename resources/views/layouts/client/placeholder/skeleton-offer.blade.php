@@ -1,0 +1,142 @@
+<div>
+    <style>
+        .skeleton-offers-slider {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        /* Skeleton loader styles */
+        .skeleton-offers-slider .skeleton {
+            background: #e0e0e0; /* Light grey color for skeleton */
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Animation for skeleton loader */
+        .skeleton-offers-slider .skeleton::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .skeleton-offers-slider .skeleton-img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .skeleton-offers-slider .skeleton-text {
+            width: 100px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skeleton-offers-slider .skeleton-price {
+            width: 80px;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+
+        .skeleton-offers-slider .skeleton-del {
+            width: 50px;
+            height: 15px;
+        }
+
+        .skeleton-offers-slider .skeleton-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            min-width: 180px;
+        }
+    </style>
+
+
+    <section class="special-offers">
+        <div class="container-fluid position-relative">
+            <div class="special-offer-bg-parent">
+                <div class="d-flex special-offer-bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                         fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M15.986 5.33395C15.5802 5.67984 15.3772 5.85279 15.1605 5.99806C14.6636 6.33107 14.1057 6.56219 13.5189 6.67803C13.2629 6.72857 12.9971 6.74978 12.4655 6.7922C11.1299 6.89879 10.462 6.95208 9.90488 7.14888C8.61621 7.60405 7.60258 8.61768 7.14741 9.90634C6.95062 10.4635 6.89732 11.1313 6.79074 12.467C6.74832 12.9986 6.72711 13.2643 6.67657 13.5203C6.56072 14.1071 6.3296 14.6651 5.9966 15.1619C5.85132 15.3787 5.67838 15.5816 5.33248 15.9875C4.46342 17.0073 4.02887 17.5172 3.77406 18.0503C3.18469 19.2834 3.18469 20.7169 3.77406 21.95C4.02887 22.4831 4.46341 22.993 5.33248 24.0128C5.67834 24.4187 5.85133 24.6217 5.9966 24.8384C6.3296 25.3352 6.56072 25.8932 6.67657 26.48C6.72711 26.736 6.74832 27.0018 6.79074 27.5334C6.89732 28.869 6.95062 29.5368 7.14741 30.094C7.60258 31.3826 8.61621 32.3963 9.90487 32.8514C10.462 33.0482 11.1299 33.1015 12.4655 33.2081C12.9971 33.2505 13.2629 33.2718 13.5189 33.3223C14.1057 33.4381 14.6636 33.6693 15.1605 34.0023C15.3772 34.1475 15.5802 34.3205 15.986 34.6664C17.0058 35.5354 17.5157 35.97 18.0489 36.2248C19.282 36.8142 20.7154 36.8142 21.9485 36.2248C22.4816 35.97 22.9916 35.5354 24.0114 34.6664C24.4172 34.3205 24.6202 34.1475 24.8369 34.0023C25.3338 33.6693 25.8917 33.4381 26.4785 33.3223C26.7345 33.2718 27.0003 33.2505 27.5319 33.2081C28.8675 33.1015 29.5354 33.0482 30.0925 32.8514C31.3812 32.3963 32.3948 31.3826 32.85 30.094C33.0468 29.5368 33.1001 28.869 33.2067 27.5334C33.2491 27.0018 33.2703 26.736 33.3208 26.48C33.4367 25.8932 33.6678 25.3352 34.0008 24.8384C34.1461 24.6217 34.319 24.4187 34.6649 24.0128C35.534 22.993 35.9685 22.4831 36.2233 21.95C36.8127 20.7169 36.8127 19.2834 36.2233 18.0503C35.9685 17.5172 35.534 17.0073 34.6649 15.9875C34.319 15.5816 34.1461 15.3787 34.0008 15.1619C33.6678 14.6651 33.4367 14.1071 33.3208 13.5203C33.2703 13.2643 33.2491 12.9986 33.2067 12.467C33.1001 11.1313 33.0468 10.4635 32.85 9.90634C32.3948 8.61768 31.3812 7.60405 30.0925 7.14888C29.5354 6.95208 28.8675 6.89879 27.5319 6.7922C27.0003 6.74978 26.7345 6.72857 26.4785 6.67803C25.8917 6.56219 25.3338 6.33107 24.8369 5.99806C24.6202 5.85279 24.4172 5.67984 24.0114 5.33395C22.9916 4.46488 22.4816 4.03034 21.9485 3.77552C20.7154 3.18615 19.282 3.18615 18.0489 3.77552C17.5157 4.03034 17.0058 4.46488 15.986 5.33395ZM26.3836 13.6161C26.9133 14.1459 26.9133 15.0047 26.3836 15.5344L15.5321 26.3859C15.0024 26.9156 14.1435 26.9156 13.6138 26.3859C13.0841 25.8562 13.0841 24.9973 13.6138 24.4676L24.4653 13.6161C24.995 13.0864 25.8538 13.0864 26.3836 13.6161ZM26.3287 24.5225C26.3287 25.5213 25.519 26.331 24.5201 26.331C23.5213 26.331 22.7115 25.5213 22.7115 24.5225C22.7115 23.5236 23.5213 22.7139 24.5201 22.7139C25.519 22.7139 26.3287 23.5236 26.3287 24.5225ZM15.4772 17.2882C16.4761 17.2882 17.2858 16.4784 17.2858 15.4796C17.2858 14.4807 16.4761 13.671 15.4772 13.671C14.4784 13.671 13.6687 14.4807 13.6687 15.4796C13.6687 16.4784 14.4784 17.2882 15.4772 17.2882Z"
+                              fill="white"></path>
+                    </svg>
+                    <h6 class="h3 text-white ms-3">پیشنهادات ویژه</h6>
+                </div>
+            </div>
+            <div class="special-offers-swiper">
+                <div class="swiper pro-slider">
+                    <div class="swiper mySwiper w-100" id="product">
+                        <div class="skeleton-offers-slider">
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+                            <div class="skeleton-item">
+                                <div class="skeleton skeleton-img"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-price"></div>
+                                <div class="skeleton skeleton-del"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
